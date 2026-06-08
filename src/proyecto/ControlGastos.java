@@ -4,18 +4,29 @@ public class ControlGastos {
 
 	public static void main(String[] args) {
 
-		Gasto gasto1 = new Gasto("Gasolina", 200);
-		Gasto gasto2 = new Gasto("Alimentacion", 150);
+		Gasto[] gastos = {
+				new Gasto("Gasolina", 200),
+				new Gasto("Alimentacion", 250),
+				new Gasto("Internet", 150),
+				new Gasto("Universidad", 809)
+		};
 
-		double total = gasto1.getMonto() + gasto2.getMonto();
+		double total = 0;
 
 		System.out.println("===== CONTROL DE GASTOS =====");
 
-		System.out.println(gasto1.getDescripcion() + ": Q" + gasto1.getMonto());
-		System.out.println(gasto2.getDescripcion() + ": Q" + gasto2.getMonto());
+		for (int i = 0; i < gastos.length; i++) {
+
+			System.out.println(
+					gastos[i].getDescripcion()
+					+ ": Q"
+					+ gastos[i].getMonto());
+
+			total += gastos[i].getMonto();
+
+		}
 
 		System.out.println("----------------------------");
-
 		System.out.println("Total gastado: Q" + total);
 
 	}
